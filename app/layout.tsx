@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { CustomThemeProvider } from "./providers";
 import "@/styles/globals.css";
 
-const inter = Inter({
+export const inter = Inter({
   subsets: ["latin-ext"],
-  weight: ["400", "500", "700"],
-  variable: "--font-inter",
+  weight: ["400", "500", "600", "700"],
+  variable: "--main-font",
 });
 
 export const metadata: Metadata = {
@@ -20,8 +21,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.variable}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={inter.variable}>
+        <CustomThemeProvider>{children}</CustomThemeProvider>
+      </body>
     </html>
   );
 }

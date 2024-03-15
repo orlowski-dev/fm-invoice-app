@@ -16,3 +16,4 @@ This is a solution to the [Invoice app challenge on Frontend Mentor](https://www
 ## Dependencies
 
 - [sass](https://www.npmjs.com/package/sass)
+- [next-themes](https://www.npmjs.com/package/next-themes)
