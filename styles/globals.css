@@ -1,3 +1,5 @@
+@import url(colors);
+
 :root {
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -5,24 +7,6 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-
-  --c-01: #7c5dfa;
-  --c-02: #9277ff;
-  --c-03: #1e2139;
-  --c-04: #252945;
-  --c-05: #dfe3fa;
-  --c-06: #888eb0;
-  --c-07: #7e88c3;
-  --c-08: #0c0e16;
-  --c-09: #ec5757;
-  --c-10: #ff9797;
-  --c-11: #f8f8fb;
-  --c-12: #141625;
-  --c-13: #ffffff;
-  --c-14: #f9fafe;
-  --c-15: #373b53;
-  --c-16: #494e6e;
-  --c-17: #858bb2;
 }
 
 * {
