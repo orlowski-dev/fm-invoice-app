@@ -1,6 +1,10 @@
 @import url(../../styles/colors.css);
+@import url(../../styles/keyframes.css);
 
 .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
   font-family: var(--main-font);
   padding: 1rem 1.5rem;
   border-radius: 9999px;
@@ -12,11 +16,12 @@
     background-color 0.1s ease-in,
     color 0.1s ease-in;
 
+  // color variants
   &.primary {
     background-color: var(--c-01);
     color: var(--c-13);
 
-    &:hover {
+    &:not([disabled]):hover {
       background-color: var(--c-02);
     }
   }
@@ -25,7 +30,7 @@
     background-color: var(--c-14);
     color: var(--c-07);
 
-    &:hover {
+    &:not([disabled]):hover {
       background-color: var(--c-05);
     }
   }
@@ -34,7 +39,7 @@
     background-color: var(--c-15);
     color: var(--c-06);
 
-    &:hover {
+    &:not([disabled]):hover {
       background-color: var(--c-08);
     }
   }
@@ -43,7 +48,7 @@
     background-color: var(--c-09);
     color: var(--c-13);
 
-    &:hover {
+    &:not([disabled]):hover {
       background-color: var(--c-10);
     }
   }
@@ -51,9 +56,85 @@
   &.plain {
     background: none;
     color: var(--c-08);
-    &:hover {
+    &:not([disabled]):hover {
       color: var(--c-02);
     }
+  }
+
+  // with start icon
+  &.with-start-icon {
+    padding: 0.5rem 1.5rem 0.5rem 0.5rem;
+
+    .start-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      transition:
+        background-color 0.1s ease-in,
+        color 0.1s ease-in;
+    }
+
+    &.primary {
+      .start-icon {
+        background-color: var(--c-13);
+        color: var(--c-01);
+      }
+    }
+
+    &.soft {
+      .start-icon {
+        background-color: var(--c-11);
+        color: var(--c-07);
+      }
+    }
+
+    &.dimmed {
+      .start-icon {
+        background-color: var(--c-11);
+        color: var(--c-06);
+      }
+    }
+
+    &.danger {
+      .start-icon {
+        background-color: var(--c-13);
+        color: var(--c-09);
+      }
+
+      &:hover {
+        .start-icon {
+          color: var(--c-10);
+        }
+      }
+    }
+
+    &.plain {
+      .start-icon {
+        color: var(--c-08);
+      }
+
+      &:hover {
+        .start-icon {
+          color: var(--c-02);
+        }
+      }
+    }
+  }
+
+  // loading
+  .loading {
+    animation: scaleIn 0.13s ease-in;
+    .spinner {
+      animation: spin 1s linear infinite;
+    }
+  }
+
+  // disabled
+  &:disabled {
+    opacity: 70%;
   }
 }
 
@@ -63,7 +144,7 @@ html.dark {
     &.soft {
       background-color: var(--c-04);
       color: var(--c-05);
-      &:hover {
+      &:not([disabled]):hover {
         background-color: var(--c-13);
         color: var(--c-07);
       }
@@ -72,7 +153,7 @@ html.dark {
     &.dimmed {
       background-color: var(--c-15);
       color: var(--c-05);
-      &:hover {
+      &:not([disabled]):hover {
         background-color: var(--c-03);
         color: var(--c-05);
       }
@@ -80,8 +161,22 @@ html.dark {
 
     &.plain {
       color: var(--c-13);
-      &:hover {
+      &:not([disabled]):hover {
         color: var(--c-02);
+      }
+    }
+
+    &.with-start-icon {
+      &.plain {
+        .start-icon {
+          color: var(--c-13);
+        }
+
+        &:not([disabled]):hover {
+          .start-icon {
+            color: var(--c-02);
+          }
+        }
       }
     }
   }
