@@ -1,8 +1,11 @@
 import type { ButtonProps } from ".";
 import { makeClassList } from "@/lib/utils";
-import "./Button.style.scss";
 import { FaSpinner } from "react-icons/fa";
+import "./Button.style.scss";
 
+/**
+ * Renders a button component.
+ */
 const Button = ({
   color,
   startIcon,
@@ -18,6 +21,8 @@ const Button = ({
         startIcon ? "with-start-icon" : null,
       ])}
       disabled={loading}
+      aria-busy={loading ? "true" : undefined}
+      aria-live="assertive"
       {...rest}
     >
       {startIcon ? <span className="start-icon">{startIcon}</span> : null}
